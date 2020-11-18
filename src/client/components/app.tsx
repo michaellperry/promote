@@ -8,7 +8,7 @@ import { VisitCounter } from "./visit-counter";
 const AppDetail = withUser(({ user, userDisplayName }) => (
     <VisitCounter user={ user } userDisplayName={ userDisplayName } fact={ new Domain("myapplication") } />
   ), () => (
-    <a href="/auth/twitter">Sign in with Twitter</a>
+    <a href="/auth/azuredevops">Sign in with Azure DevOps</a>
   )
 );
 

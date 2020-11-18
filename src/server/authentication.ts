@@ -1,6 +1,6 @@
 import * as Express from 'express';
 import * as passport from 'passport';
-import { configureAuthenticationTwitter } from './authentication-strategy/twitter';
+import { configureAuthenticationAzureDevOps } from './authentication-strategy/azure-devops';
 
 export function configureAuthentication(app: Express.Application) {
   passport.serializeUser((user, done) => {
@@ -13,7 +13,7 @@ export function configureAuthentication(app: Express.Application) {
   app.use(passport.initialize());
   app.use(passport.session());
 
-  configureAuthenticationTwitter(app);
+  configureAuthenticationAzureDevOps(app);
 
   const authenticate: Express.Handler = (req, res, next) => {
     if (req.isAuthenticated()) {
